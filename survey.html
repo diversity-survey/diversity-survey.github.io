@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversity Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: auto;
+            padding: 0;
+            background-color: #f4f8ff;
+        }
+
+        header {
+            background-color: #404858;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: all 0.3s;
+        }
+
+@media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+@media (max-width: 768px) {
+            nav.active {
+                display: flex;
+            }
+        }
+
+        footer {
+            background-color: #404858;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer nav a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+
+        main {
+            margin: 10px 50px;
+        }
+
+        #iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 178%;
+            margin: auto;
+        }
+
+        #survey {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #title {
+            background-color: #1f1f7a;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Survey</h1>
+    <header>
+        <div class="container">
+            <h1>Diversity Survey</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="survey.html">Take the Survey</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p>
+            You can take the survey here or go to the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9XHrqgsZ05Nf-oQ5iA20IB8ONznKhVSf39Ux9ZU4eWt_MGQ/viewform">Google Form</a>.
+        </p>
+        <div id="iframe-container">
+            <iframe id="survey" src="https://docs.google.com/forms/d/e/1FAIpQLSd9XHrqgsZ05Nf-oQ5iA20IB8ONznKhVSf39Ux9ZU4eWt_MGQ/viewform?embedded=true"></iframe>
+        </div>
+    </main>
+    <footer>
+        <p>
+            &copy; 2024 Diversity Survey. All rights reserved.
+        </p>
+    </footer>
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
